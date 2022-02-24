@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Staatliches&display=swap');
+
+:root{
+    --body-bg: rgb(239, 255, 251);
+    --heading-color: rgb(60, 172, 26);
+    --sub-heading-color: rgb(97, 116, 89);
+    --project-heading-color: rgb(9, 66, 68);
+    --project-bg: rgba(81, 145, 156, 0.2);
+    --link-color: rgb(152, 86, 206);
+    --link-hover-color: rgb(94, 48, 168);
+    --link-active-color: #333;
+    --heading-font : 'Staatliches', cursive;
+    --body-font: 'Roboto', sans-serif;
+}
+
+*,
+*::before,
+*::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    background-color: var(--body-bg);
+    font-size: 16px;
+    font-family: var(--body-font);
+}
+h1,h2,h3,h4,h5{
+    font-family: var(--heading-font);
+    text-transform: capitalize;
+}
+h1,h2{
+    color: var(--heading-color);
+}
+h2{
+    text-transform: uppercase;
+}
+h3{
+    color: var(--project-heading-color);
+}
+h1 span{
+    color: rgb(16, 109, 78);
+}
+/*-----------------------------*/
+
+/*Woring on the main page*/
+div.container{
+    flex-grow: 1;
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+}
+
+div.container header{
+    text-align: center;
+    padding: 2rem;
+}
+div.container header p{
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--sub-heading-color);
+}
+/*Header Done*/
+
+div.container main{
+    padding: 1rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+div.container main div.react h2,
+div.container main div.htmlCssJs h2{
+    margin-bottom: 1rem;
+}
+
+
+div.container main div.react .innerContainer,
+div.container main div.htmlCssJs .innerContainer{
+    display: flex;
+    flex-flow: row wrap;
+    gap: 2rem;
+}
+
+div.container main .innerContainer article.project{
+    padding: 0.5rem 1rem;
+    display: grid;
+    width: 100%;
+    max-width: 250px;
+    gap: 0.5rem;
+    text-align: center;
+    background-color: var(--project-bg);
+    border-radius: 5px;
+}
+
+div.container main .innerContainer article.project div.links{
+    display: flex;
+    padding: 0.5rem 1rem;
+    justify-content: space-around;
+}
+
+
+div.container main .innerContainer article.project div.links a{
+    display: block;
+    text-decoration: none;
+    text-transform: capitalize;
+    color: var(--link-color);
+    font-weight: 500;
+}
+div.container main .innerContainer article.project div.links a:hover{
+    transform: scale(1.2);
+    color: var(--link-hover-color);
+}
+div.container main .innerContainer article.project div.links a:active{
+    color: var(--link-active-color);
+}
+
+
+@media screen and (max-width: 600px) {
+
+    div.container main{
+        gap: 3rem;
+    }
+
+    div.container main div.react h2,
+    div.container main div.htmlCssJs h2{
+        text-align: center;
+    }
+
+    div.container main div.react .innerContainer,
+    div.container main div.htmlCssJs .innerContainer{
+        justify-content: center;
+    }
+
+}
